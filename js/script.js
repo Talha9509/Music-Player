@@ -21,7 +21,7 @@ function secondsToMinutesSeconds(seconds){
 async function getSongs(folder) {
     currFolder=folder
     // let a= await fetch(`http://127.0.0.1:3000/songs/${folder}`)
-    let a= await fetch(`http://192.168.1.5:3000/songs/${folder}`)
+    let a= await fetch(`songs/${folder}`)
     let response= await a.text();
     // console.log(response);
     // it is giving text of html so
@@ -93,7 +93,7 @@ const playMusic=(track,pause=false)=>{
 
 async function displayAlbums(){
     // let a= await fetch(`http://127.0.0.1:3000/songs/`)
-    let a= await fetch(`http://192.168.1.5:3000/songs/`)
+    let a= await fetch(`songs/`)
     let response= await a.text();
     let div=document.createElement("div")
     div.innerHTML=response;
